@@ -1,31 +1,64 @@
-import Image from "next/image";
+'use client'
+import {FaChevronDown} from "react-icons/fa6"
 import { TypeWriter } from "@/components";
+import { motion, useScroll } from "framer-motion";
+import { LegacyRef, RefObject, useRef } from "react";
+import Me from '../public/171847957597898519.jpeg'
+import Image from "next/image";
 
 const greetings = [
-  "Hello",             // English
-  "Hola",              // Spanish
-  "Привет",            // Russian
-  "Bonjour",           // French
-  "你好",               // Chinese (Simplified)
-  "Ciao",              // Italian
-  "안녕하세요",           // Korean
-  "Olá",               // Portuguese
-  "नमस्ते",             // Hindi
-  "Merhaba",           // Turkish
-  "سلام",              // Persian (Farsi)
-  "مرحبا",             // Arabic
-  "Hallo",             // German
-  "こんにちは",           // Japanese
-  "Γεια σας",           // Greek
-  "Ahoj",              // Czech
-  "Hej",               // Swedish
-  "გამარჯობა",         // Georgian
-  "Szia",              // Hungarian
-  "Salut"              // Romanian
+  "Hello",
+  "Hola",
+  "Привет",
+  "Bonjour",
+  "你好",
+  "Ciao",
+  "안녕하세요",
+  "Olá",
+  "नमस्ते",
+  "Merhaba",
+  "سلام",
+  "مرحبا",
+  "Hallo",
+  "こんにちは",
+  "Γεια σας",
+  "Ahoj",
+  "Hej",
+  "გამარჯობა",
+  "Szia",
+  "നമസ്കാരം",
 ];
 
+
 export default function Home() {
+
+  const scrollRef = useRef() as RefObject<HTMLElement>;
+  const {scrollY} = useScroll({container: scrollRef});
+
   return (
-   <div><TypeWriter words={greetings} pace="FAST" fontSize="text-5xl" /></div>
+    <div ref={scrollRef as LegacyRef<HTMLDivElement>} className="w-full h-screen overflow-y-scroll scroll-m-0 scroll-p-0 snap-y snap-mandatory ">
+      {/* Page 1 */}
+      <div className="w-screen h-screen flex justify-center snap-start snap-always ">
+        <TypeWriter words={greetings} pace="FAST" fontSize="text-5xl" />
+        <motion.div className={`absolute left-[50wh]`} style={{bottom: scrollY}}>
+          <div className="w-10 h-10 overflow-hidden rounded-3xl bg-slate-300 animate-bounce hover:animate-none text-black text-xl flex justify-center items-center">
+            <FaChevronDown />
+          </div>
+        </motion.div>
+      </div>
+
+      {/* Page 2 */}
+      <div className="w-screen h-screen flex justify-around items-center snap-start snap-always">
+        <motion.div className="text-lef max-w-[40vw]" initial={{opacity: 0}} whileInView={{opacity: 1, transition: {duration: 1.5}}} viewport={{root: scrollRef, margin: '20px', amount: 0.5, once: false}}>
+          <p className="text-2xl">Emil Kurian</p>
+          <p>{"If I had to choose a word that best describes my skill set it is problem solver. "}</p>
+
+        </motion.div>
+        <motion.div className="rounded overflow-hidden" initial={{translateY: '20vh', opacity: 0.4}} whileInView={{opacity: 1, translateY: '0vh', transition: {duration: 1}}}>
+          <Image src={Me} alt="Me" placeholder="blur" quality={100} style={{objectFit: "cover", opacity: 0.7, width: '40vw', height: '60vh'}} />
+        </motion.div>
+      </div>
+
+    </div>
   );
 }

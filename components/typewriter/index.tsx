@@ -25,7 +25,7 @@ const TypeWriter: FC<TypeWriterProps> = ({pace, words, fontSize = 'text-base'}) 
     let intervalRef = undefined
     intervalRef = setInterval(() => {
       if (currentLetter > words[currentWord].length) {
-          isClearing = true
+        isClearing = true
       }
       if (currentLetter === 0 && isClearing) {
         currentWord = currentWord >= words.length - 1 ? 0 : currentWord + 1
