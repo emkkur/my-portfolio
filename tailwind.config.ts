@@ -5,6 +5,7 @@ const config: Config = {
     "./pages/**/*.{js,ts,jsx,tsx,mdx}",
     "./components/**/*.{js,ts,jsx,tsx,mdx}",
     "./app/**/*.{js,ts,jsx,tsx,mdx}",
+    "./hoc/**/*.{js,ts,jsx,tsx,mdx}"
   ],
   theme: {
     extend: {
@@ -17,10 +18,16 @@ const config: Config = {
         blink: {
           '0%': { opacity: '0' },
           '100%': { opacity: '1' }
+        },
+        breath: {
+          '0%': { borderRadius: '50% 50% 50% 50% / 50% 50% 50% 50% ', transform: 'scale(1) rotate(0deg)'},
+          '50%': { borderRadius: '96% 4% 93% 7% / 6% 91% 9% 94% ', transform: 'scale(1.1) rotate(5deg)'},
+          '100%': { borderRadius: '50% 50% 50% 50% / 50% 50% 50% 50%', transform: 'scale(1) rotate(0deg)'},
         }
       },
       animation: {
-        blink: "blink 0.5s ease-in-out infinite"
+        blink: "blink 0.5s ease-in-out infinite",
+        breath: "breath 15s ease-in-out infinite"
       }
     },
   },

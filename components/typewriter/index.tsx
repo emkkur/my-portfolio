@@ -43,7 +43,7 @@ const TypeWriter: FC<TypeWriterProps> = ({pace, words, fontSize = 'text-base'}) 
   , [words, interval])
 
   return (
-    <span className={`${fontSize} text-white flex flex-row items-center justify-center`}><div>{word}</div><div className="animate-blink">|</div></span>
+    <span className={`${fontSize} text-white flex flex-row items-center justify-center`}><div>{word}</div><div className="z-0 animate-blink">|</div></span>
   )
 }
 
