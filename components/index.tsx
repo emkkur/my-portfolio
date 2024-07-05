@@ -1,3 +1,4 @@
 import TypeWriter from "./Typewriter";
+import ImageGrid from "./ImageGrid";
 
-export {TypeWriter}
+export {TypeWriter, ImageGrid}

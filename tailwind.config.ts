@@ -20,9 +20,9 @@ const config: Config = {
           '100%': { opacity: '1' }
         },
         breath: {
-          '0%': { borderRadius: '50% 50% 50% 50% / 50% 50% 50% 50% ', transform: 'scale(1) rotate(0deg)'},
-          '50%': { borderRadius: '96% 4% 93% 7% / 6% 91% 9% 94% ', transform: 'scale(1.1) rotate(5deg)'},
-          '100%': { borderRadius: '50% 50% 50% 50% / 50% 50% 50% 50%', transform: 'scale(1) rotate(0deg)'},
+          '0%': { borderRadius: '50% 50% 50% 50% / 50% 50% 50% 50% ' },
+          '50%': { borderRadius: '96% 4% 93% 7% / 6% 91% 9% 94% ' },
+          '100%': { borderRadius: '50% 50% 50% 50% / 50% 50% 50% 50%' },
         }
       },
       animation: {
