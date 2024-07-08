@@ -1,24 +1,24 @@
-"use client"
+"use client";
 import Image from "next/image";
-import { FC, ReactNode, useEffect, useState } from "react";
+import { FC, useEffect, useState } from "react";
 import { motion } from "framer-motion";
-import F2PayRespect from "../../public/F2PayRespect.gif"
+import F2PayRespect from "../../public/F2PayRespect.gif";
 
-const F4Respect: FC<{children: ReactNode}> = ({children}) => {
+const F4Respect: FC = () => {
   const startAnimation = (e: KeyboardEvent) => {
     if (e.key === "f") {
-      setShow(true)
-      setTimeout(() => {setShow(false)}, 6000)
+      setShow(true);
+      setTimeout(() => {setShow(false);}, 6000);
     }
-  }
+  };
 
   useEffect(() => {
-    document.addEventListener("keydown", startAnimation)
+    document.addEventListener("keydown", startAnimation);
     return () => {
-      document.removeEventListener("keydown", startAnimation)
-    }}, [])
+      document.removeEventListener("keydown", startAnimation);
+    };}, []);
 
-  const [show, setShow] = useState(false)
+  const [show, setShow] = useState(false);
 
   return (
     <>
@@ -27,9 +27,8 @@ const F4Respect: FC<{children: ReactNode}> = ({children}) => {
           <Image className="w-3/4 h-3/4" src={F2PayRespect} alt="F To Pay respect" unoptimized/>
         </motion.div>
       </div>)}
-      {children}
     </>
   );
-}
+};
 
 export default F4Respect;
