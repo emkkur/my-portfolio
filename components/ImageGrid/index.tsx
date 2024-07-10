@@ -1,12 +1,12 @@
 /* eslint-disable react-hooks/exhaustive-deps */
-'use client'
+'use client';
 import { Canvas, extend, useLoader } from '@react-three/fiber';
 import React, { FC, ReactElement, useMemo } from 'react';
 import * as THREE from 'three';
 import { motion } from 'framer-motion-3d';
 import { MotionConfig } from 'framer-motion';
 
-extend({BoxGeometry: motion.boxGeometry})
+extend({BoxGeometry: motion.boxGeometry});
 
 type CubeProps = {
   position: number[], index: number[], dimensions: number[]
@@ -19,8 +19,8 @@ type GridProps = {
 const Cube: FC<CubeProps> = ({position, index, dimensions}) => {
 
 
-  const face1 = useLoader(THREE.ImageBitmapLoader, `/portait/block_${index[0]}-${dimensions[1]-index[1]-1}.jpg`, loader => loader.setOptions({imageOrientation: 'flipY'}));
-  const face2 = useLoader(THREE.ImageBitmapLoader, `/portait_abstract/block_${index[0]}-${dimensions[1]-index[1]-1}.jpg`, loader => loader.setOptions({imageOrientation: 'flipY'}));
+  const face1 = useLoader(THREE.ImageBitmapLoader, `/portrait/block_${index[0]}-${dimensions[1]-index[1]-1}.jpg`, loader => loader.setOptions({imageOrientation: 'flipY'}));
+  const face2 = useLoader(THREE.ImageBitmapLoader, `/portrait_bw/block_${index[0]}-${dimensions[1]-index[1]-1}.jpg`, loader => loader.setOptions({imageOrientation: 'flipY'}));
   const texture1 = new THREE.CanvasTexture(face1);
   const texture2 = new THREE.CanvasTexture(face2);
 

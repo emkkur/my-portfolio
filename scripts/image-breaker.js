@@ -21,6 +21,7 @@ async function splitImage(imagePath, rows, cols, outputDir) {
         const y = row * blockHeight;
 
         const block = image.clone();
+        block.brightness(-0.5);
         block.crop(x, y, blockWidth, blockHeight);
 
         const filename = path.join(outputDir, `block_${rows-row-1}-${cols-col-1}.jpg`);

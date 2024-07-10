@@ -22,7 +22,7 @@ const F4Respect: FC = () => {
 
   return (
     <>
-      {show && (<div className="absolute flex justify-center items-center z-10 h-screen w-screen bg-slate-900/40">
+      {show && (<div className="absolute flex justify-center items-center z-20 h-screen w-screen bg-slate-900/40">
         <motion.div className="w-3/4 h-3/4 rounded-xl bg-gray-900 flex justify-center items-center" animate={{opacity: 1}} initial={{opacity: 0}} transition={{duration: 1}}>
           <Image className="w-3/4 h-3/4" src={F2PayRespect} alt="F To Pay respect" unoptimized/>
         </motion.div>

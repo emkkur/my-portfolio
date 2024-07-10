@@ -14,7 +14,7 @@ export default function Landing() {
   return (
     <>
       <F4Respect />
-      <div ref={scrollRef} className="w-full h-[800vh] relative"> 
+      <div ref={scrollRef} className="w-full h-[800vh] relative z-10"> 
         <Page1 />
         <Page2 progress={page2ScrollProgress} />
         <Page3 />

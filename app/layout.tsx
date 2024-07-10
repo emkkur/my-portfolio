@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import {Roboto, Titillium_Web} from 'next/font/google';
+import { ParticleBg } from "@/components";
 export const metadata: Metadata = {
   title: "Emil Kurian",
   description: "A software engineer and front end developer",
@@ -28,7 +29,10 @@ export default function RootLayout({
 }>) {
   return (
     <html className={`${roboto.variable} ${titillium.variable}`} lang="en">
-      <body>{children}</body>
+      <body>
+        {children}
+        <ParticleBg />
+      </body>
     </html>
   );
 }
