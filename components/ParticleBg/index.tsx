@@ -5,7 +5,7 @@ import Particles, {initParticlesEngine} from "@tsparticles/react";
 import {
   type ISourceOptions,
 } from "@tsparticles/engine";
-import particleConfig from "@/public/particles/particlesjs-config.json";
+import particleConfig from "./particlesjs-config";
 import { loadFull } from "tsparticles";
 import { loadPolygonPath } from "@tsparticles/path-polygon";
 

@@ -17,6 +17,7 @@ const config: Config = {
       fontFamily: {
         titillium: ['var(--font-titillium)'],
         roboto: ['var(--font-roboto)'],
+        dotMatrix: ['var(--font-dot-matrix)'],
       },
       keyframes: {
         blink: {

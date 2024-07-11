@@ -4,7 +4,8 @@ import { Canvas, extend, useLoader } from '@react-three/fiber';
 import React, { FC, ReactElement, useMemo } from 'react';
 import * as THREE from 'three';
 import { motion } from 'framer-motion-3d';
-import { MotionConfig } from 'framer-motion';
+import { MotionConfig, MotionValue, useMotionValue, useSpring, useTransform } from 'framer-motion';
+import useMeasure, { RectReadOnly } from 'react-use-measure';
 
 extend({BoxGeometry: motion.boxGeometry});
 
@@ -13,7 +14,7 @@ type CubeProps = {
 }
 
 type GridProps = {
-  x: number, y: number, spacing: number
+  x: number, y: number, spacing: number, bounds: RectReadOnly
 }
 
 const Cube: FC<CubeProps> = ({position, index, dimensions}) => {
@@ -38,9 +39,10 @@ const Cube: FC<CubeProps> = ({position, index, dimensions}) => {
 
   return (
     <motion.group
-      position={new THREE.Vector3(position[0], position[1], position[2])}
+      position={new THREE.Vector3(position[0] - dimensions[1]/2, position[1] - dimensions[0]/2, 0)}
       animate={{rotateY: [0, Math.PI/2, Math.PI/2, Math.PI/2, Math.PI/2, 0]}}
       transition={{repeat: Infinity, duration: 6, delay, repeatDelay: 4, ease: 'linear'}}
+      castShadow
     >
       <motion.mesh material={cubeMaterials} >
         <motion.boxGeometry args={[1, 1, 1]} />
@@ -49,8 +51,42 @@ const Cube: FC<CubeProps> = ({position, index, dimensions}) => {
   );
 };
 
-const Grid: FC<GridProps> = ({ x = 20, y = 20, spacing = 1.2 }) => {
+type SmoothTransformArgs = {
+  stiffness: number, damping: number
+}
 
+
+const mouseToLightRotationY = (v: number) => {
+  const rotate = (1 * v) / 200;
+  if (rotate > 0.1) return 0.1;
+  if (rotate < -0.1) return -0.1;
+  return rotate;
+};
+
+const mouseToLightRotationX = (v: number) => {
+  const rotate = (1 * v) / 200;
+  if (rotate > 0.1) return 0.1;
+  if (rotate < -0.1) return -0.1;
+  return rotate;
+};
+
+function useSmoothTransform(value: MotionValue<number>, springOptions: SmoothTransformArgs, transformer: any) {
+  return useSpring(useTransform(value, transformer), springOptions);
+}
+
+const spring: SmoothTransformArgs = { stiffness: 600, damping: 30 };
+
+const Grid: FC<GridProps> = ({ x = 20, y = 20, spacing = 1.2, bounds }) => {
+
+  const mouseX = useMotionValue(-bounds.width);
+  const mouseY = useMotionValue(0);
+
+  const resetMousePosition = () => {
+    mouseX.set(-bounds.width);
+    mouseY.set(0);
+  };
+  const lightRotateY = useSmoothTransform(mouseX, spring, mouseToLightRotationX);
+  const lightRotateX = useSmoothTransform(mouseY, spring, mouseToLightRotationY);
 
   const cubes: ReactElement[] = useMemo(() => {
     const tempcubes: ReactElement[] = [];
@@ -69,17 +105,50 @@ const Grid: FC<GridProps> = ({ x = 20, y = 20, spacing = 1.2 }) => {
   }, []);
 
   return (
-    <motion.group position={[-x/2, -y/1.5, -6]}>
+    <motion.group
+      castShadow
+      position={[0, 0, -11.8]}
+      rotation={[lightRotateX, lightRotateY, 0]}
+      onPointerEnter={resetMousePosition}
+      onPointerOut={resetMousePosition}
+      
+      onPointerMove={(e) => {
+        mouseX.set(e.clientX - bounds.x - bounds.width / 2);
+        mouseY.set(e.clientY - bounds.y - bounds.height / 2);
+      }}
+    >
       {cubes}
     </motion.group>);
 };
 const ImageGrid: React.FC = () => {
 
+  const [ref, bounds] = useMeasure({scroll: false});
+
   return (
-    <div className='h-[60vh] w-[50vw] flex justify-center items-center'>
+    <div ref={ref} className='h-[70vh] w-[50vw] flex justify-center items-center'>
       <Canvas>
         <MotionConfig >
-          <Grid x={20} y={15} spacing={1.1}/>
+          <motion.pointLight position={[-10, -10, 0]} distance={5} color={'#EEEEEE'} intensity={5} />
+          <motion.spotLight
+            castShadow
+            position={[0, 0, 0]}
+            intensity={2}
+            shadow-mapSize-width={2048}
+            shadow-mapSize-height={2048}
+            shadow-bias={-0.0001}
+          />
+          <mesh
+            receiveShadow
+            renderOrder={1000}
+            position={[0, 0, 0]}
+          >
+            <planeGeometry args={[10, 10]} />
+            <motion.shadowMaterial
+              transparent
+              opacity={0.5}
+            />
+          </mesh>
+          <Grid x={20} y={15} spacing={1.1} bounds={bounds}/>
         </MotionConfig>
       </Canvas>
     </div>

@@ -1,4 +1,8 @@
-{
+import {
+  type ISourceOptions,
+} from "@tsparticles/engine";
+
+const particlesConfig: ISourceOptions = {
   "autoPlay": true,
   "background": {
     "color": {
@@ -34,8 +38,8 @@
     "detectsOn": "window",
     "events": {
       "onClick": {
-        "enable": false,
-        "mode": []
+        "enable": true,
+        "mode": ["repulse"]
       },
       "onDiv": {
         "selectors": [],
@@ -181,7 +185,7 @@
       }
     },
     "color": {
-      "value": "#C0C0C0",
+      "value": "#212121",
       "animation": {
         "h": {
           "count": 0,
@@ -258,7 +262,7 @@
         "options": {
           "sides": 6,
           "turnSteps": 30,
-          "angle": 30
+          "angle": 45
         },
         "generator": "polygonPathGenerator"
       },
@@ -279,7 +283,7 @@
       "straight": false,
       "trail": {
         "enable": true,
-        "length": 20,
+        "length": 5,
         "fill": {
           "color": {
             "value": "#000"
@@ -534,4 +538,6 @@
       "value": true
     }
   }
-}
+};
+
+export default particlesConfig;
