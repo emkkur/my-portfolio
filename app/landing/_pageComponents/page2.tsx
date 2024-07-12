@@ -2,16 +2,21 @@
 import { FC } from "react";
 import { MotionValue, motion, useTransform } from "framer-motion";
 import { ImageGrid } from "@/components";
+import { PageProps } from "./types";
 
-const Page2: FC<{progress: MotionValue<number>}>  = ({progress}) => {
+interface Page2Props extends PageProps {
+  progress: MotionValue<number>
+}
 
-  const subHead1Y = useTransform(progress, [0.1, 0.3], [100, 0]);
+const Page2: FC<Page2Props>  = ({progress, height}) => {
+
+  const subHead1Y = useTransform(progress, [0.1, 0.4], [100, 0]);
   const subHead2Y = useTransform(progress, [0.4, 0.5], [100, 0]);
   const opacity1 = useTransform(progress, [0.1, 0.3], [0, 1]);
   const opacity2 = useTransform(progress, [0.4, 0.5], [0, 1]);
 
   return (
-    <div className="h-[300vh]">
+    <div style={{height: `${height}vh`}}>
       <div className="w-screen h-screen flex justify-around items-center sticky top-0">
         <motion.div className="text-sm max-w-[45vw] " initial={{opacity: 0}} whileInView={{opacity: 1, transition: {duration: 1.5}}}>
           <p className="text-8xl font-dotMatrix font-medium mb-1 ml-[-10px]">Emil Kurian</p>

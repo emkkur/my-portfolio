@@ -1,6 +1,7 @@
 import { TypeWriter } from "@/components";
 import { FC } from "react";
 import { FaChevronDown } from "react-icons/fa6";
+import { PageProps } from "./types";
 
 const greetings = [
   "Hello",
@@ -25,12 +26,14 @@ const greetings = [
   "നമസ്കാരം",
 ];
 
-const Page1: FC = () => {
+const Page1: FC<PageProps> = ({height = 100}) => {
   const scrollToNextPage = () => {
     window.scrollTo({ top: window.innerHeight, behavior: 'smooth' });
   };
+
+  console.log(height);
   
-  return (<div className="w-screen h-screen flex justify-center flex-col">
+  return (<div className={`w-screen flex justify-center flex-col`} style={{height: `${height}vh`}}>
     <TypeWriter words={greetings} pace="FAST" fontSize="text-5xl" />
     <div onClick={scrollToNextPage} className="relative bottom-[-42vh] left-[48.5vw] w-[3vw] h-[3vw] x-0 overflow-hidden rounded-3xl bg-slate-300 animate-bounce hover:animate-none text-black text-xl flex justify-center items-center">
       <FaChevronDown fontSize={'1.25vw'} />

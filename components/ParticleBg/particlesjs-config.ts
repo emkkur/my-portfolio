@@ -38,8 +38,8 @@ const particlesConfig: ISourceOptions = {
     "detectsOn": "window",
     "events": {
       "onClick": {
-        "enable": true,
-        "mode": ["repulse"]
+        "enable": false,
+        "mode": []
       },
       "onDiv": {
         "selectors": [],
@@ -48,10 +48,10 @@ const particlesConfig: ISourceOptions = {
         "type": "circle"
       },
       "onHover": {
-        "enable": false,
+        "enable": true,
         "mode": [],
         "parallax": {
-          "enable": false,
+          "enable": true,
           "force": 2,
           "smooth": 10
         }
@@ -185,12 +185,12 @@ const particlesConfig: ISourceOptions = {
       }
     },
     "color": {
-      "value": "#212121",
+      "value": "#fff",
       "animation": {
         "h": {
           "count": 0,
-          "enable": true,
-          "speed": 5,
+          "enable": false,
+          "speed": 1,
           "decay": 0,
           "delay": 0,
           "sync": true,
@@ -199,7 +199,7 @@ const particlesConfig: ISourceOptions = {
         "s": {
           "count": 0,
           "enable": false,
-          "speed": 5,
+          "speed": 1,
           "decay": 0,
           "delay": 0,
           "sync": true,
@@ -207,8 +207,8 @@ const particlesConfig: ISourceOptions = {
         },
         "l": {
           "count": 0,
-          "enable": true,
-          "speed": 5,
+          "enable": false,
+          "speed": 1,
           "decay": 0,
           "delay": 0,
           "sync": true,
@@ -246,7 +246,7 @@ const particlesConfig: ISourceOptions = {
       "distance": {},
       "direction": "none",
       "drift": 0,
-      "enable": true,
+      "enable": false,
       "gravity": {
         "acceleration": 9.81,
         "enable": false,
@@ -254,41 +254,32 @@ const particlesConfig: ISourceOptions = {
         "maxSpeed": 50
       },
       "path": {
-        "clamp": false,
+        "clamp": true,
         "delay": {
           "value": 0
         },
-        "enable": true,
-        "options": {
-          "sides": 6,
-          "turnSteps": 30,
-          "angle": 45
-        },
-        "generator": "polygonPathGenerator"
+        "enable": false,
+        "options": {}
       },
       "outModes": {
-        "default": "destroy",
-        "bottom": "destroy",
-        "left": "destroy",
-        "right": "destroy",
-        "top": "destroy"
+        "default": "out",
+        "bottom": "out",
+        "left": "out",
+        "right": "out",
+        "top": "out"
       },
       "random": false,
       "size": false,
-      "speed": 3,
+      "speed": 2,
       "spin": {
         "acceleration": 0,
         "enable": false
       },
       "straight": false,
       "trail": {
-        "enable": true,
-        "length": 5,
-        "fill": {
-          "color": {
-            "value": "#000"
-          }
-        }
+        "enable": false,
+        "length": 10,
+        "fill": {}
       },
       "vibrate": false,
       "warp": false
@@ -296,21 +287,24 @@ const particlesConfig: ISourceOptions = {
     "number": {
       "density": {
         "enable": true,
-        "width": 1920,
-        "height": 1080
+        "width": 3000,
+        "height": 4000
       },
       "limit": {
         "mode": "delete",
         "value": 0
       },
-      "value": 0
+      "value": 2000
     },
     "opacity": {
-      "value": 1,
+      "value": {
+        "min": 0.1,
+        "max": 1
+      },
       "animation": {
         "count": 0,
-        "enable": false,
-        "speed": 2,
+        "enable": true,
+        "speed": 0.25,
         "decay": 0,
         "delay": 0,
         "sync": false,
@@ -338,7 +332,7 @@ const particlesConfig: ISourceOptions = {
       "type": "circle"
     },
     "size": {
-      "value": 2,
+      "value": 1,
       "animation": {
         "count": 0,
         "enable": false,
@@ -500,37 +494,7 @@ const particlesConfig: ISourceOptions = {
   "style": {},
   "themes": [],
   "zLayers": 100,
-  "emitters": {
-    "autoPlay": true,
-    "fill": true,
-    "life": {
-      "wait": false
-    },
-    "rate": {
-      "quantity": 1,
-      "delay": 0.25
-    },
-    "shape": {
-      "options": {},
-      "replace": {
-        "color": false,
-        "opacity": false
-      },
-      "type": "square"
-    },
-    "startCount": 0,
-    "size": {
-      "mode": "percent",
-      "height": 0,
-      "width": 0
-    },
-    "direction": "none",
-    "particles": {},
-    "position": {
-      "x": 50,
-      "y": 50
-    }
-  },
+  "emitters": [],
   "motion": {
     "disable": false,
     "reduce": {
