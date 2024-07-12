@@ -1,8 +1,4 @@
-import {
-  type ISourceOptions,
-} from "@tsparticles/engine";
-
-const particlesConfig: ISourceOptions = {
+{
   "autoPlay": true,
   "background": {
     "color": {
@@ -287,14 +283,14 @@ const particlesConfig: ISourceOptions = {
     "number": {
       "density": {
         "enable": true,
-        "width": 3000,
-        "height": 4000
+        "width": 1920,
+        "height": 1080
       },
       "limit": {
         "mode": "delete",
         "value": 0
       },
-      "value": 2000
+      "value": 200
     },
     "opacity": {
       "value": {
@@ -502,6 +498,4 @@ const particlesConfig: ISourceOptions = {
       "value": true
     }
   }
-};
-
-export default particlesConfig;
+}
