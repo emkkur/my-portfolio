@@ -1,8 +1,4 @@
-import {
-  type ISourceOptions,
-} from "@tsparticles/engine";
-
-const particlesConfig: ISourceOptions = {
+{
   "autoPlay": true,
   "background": {
     "color": {
@@ -11,7 +7,7 @@ const particlesConfig: ISourceOptions = {
     "image": "",
     "position": "",
     "repeat": "",
-    "size": " 120vw 120vh",
+    "size": "",
     "opacity": 1
   },
   "backgroundMask": {
@@ -52,7 +48,7 @@ const particlesConfig: ISourceOptions = {
         "mode": [],
         "parallax": {
           "enable": true,
-          "force": 1.5,
+          "force": 2,
           "smooth": 10
         }
       },
@@ -287,14 +283,14 @@ const particlesConfig: ISourceOptions = {
     "number": {
       "density": {
         "enable": true,
-        "width": 3000,
-        "height": 4000
+        "width": 1920,
+        "height": 1080
       },
       "limit": {
         "mode": "delete",
         "value": 0
       },
-      "value": 1000
+      "value": 200
     },
     "opacity": {
       "value": {
@@ -328,13 +324,8 @@ const particlesConfig: ISourceOptions = {
     "shape": {
       "close": true,
       "fill": true,
-      "options": {
-        "star": {
-          sides: 5,
-          inset: 2.5,
-        }
-      },
-      "type": "star"
+      "options": {},
+      "type": "circle"
     },
     "size": {
       "value": 1,
@@ -408,7 +399,7 @@ const particlesConfig: ISourceOptions = {
         "opacity": 1
       },
       "particles": {
-        "enable": true,
+        "enable": false,
         "frequency": 0.05,
         "opacity": 1
       }
@@ -496,10 +487,7 @@ const particlesConfig: ISourceOptions = {
   "pauseOnOutsideViewport": true,
   "responsive": [],
   "smooth": false,
-  "style": {
-    'height': '200vh',
-    'width': '200vw',
-  },
+  "style": {},
   "themes": [],
   "zLayers": 100,
   "emitters": [],
@@ -510,6 +498,4 @@ const particlesConfig: ISourceOptions = {
       "value": true
     }
   }
-};
-
-export default particlesConfig;
+}
