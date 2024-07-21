@@ -30,8 +30,6 @@ const Page1: FC<PageProps> = ({height = 100}) => {
   const scrollToNextPage = () => {
     window.scrollTo({ top: window.innerHeight, behavior: 'smooth' });
   };
-
-  console.log(height);
   
   return (<div className={`w-screen flex justify-center flex-col`} style={{height: `${height}vh`}}>
     <TypeWriter words={greetings} pace="FAST" fontSize="text-5xl" />

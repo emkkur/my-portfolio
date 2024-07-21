@@ -1,14 +1,11 @@
 'use client';
 import { FC } from "react";
-import { MotionValue, motion, useTransform } from "framer-motion";
+import { motion, useTransform } from "framer-motion";
 import { ImageGrid } from "@/components";
-import { PageProps } from "./types";
+import { PageScrollProps } from "./types";
 
-interface Page2Props extends PageProps {
-  progress: MotionValue<number>
-}
 
-const Page2: FC<Page2Props>  = ({progress, height}) => {
+const Page2: FC<PageScrollProps>  = ({progress, height}) => {
 
   const subHead1Y = useTransform(progress, [0.1, 0.4], [100, 0]);
   const subHead2Y = useTransform(progress, [0.4, 0.5], [100, 0]);

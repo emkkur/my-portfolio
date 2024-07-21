@@ -15,6 +15,7 @@ export default function Landing() {
   const scrollRef = useRef<HTMLDivElement>(null);
   const {scrollYProgress} = useScroll({target: scrollRef,});
   const page2ScrollProgress = useTransform(scrollYProgress, [pagePercentages[0], pagePercentages[1]], [0, 1]);
+  const page3ScrollProgress = useTransform(scrollYProgress, [pagePercentages[1], pagePercentages[2]], [0, 1]);
 
   return (
     <>
@@ -22,7 +23,7 @@ export default function Landing() {
       <div ref={scrollRef} className={`w-full h-[${totalHeight}vh] relative z-10`}> 
         <Page1 height={heights[0]} />
         <Page2 height={heights[1]} progress={page2ScrollProgress} />
-        <Page3 height={heights[2]} />
+        <Page3 height={heights[2]} progress={page3ScrollProgress} />
       </div>
     </>
   );
