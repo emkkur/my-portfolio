@@ -31,7 +31,7 @@ const JourneyPage: React.FC<PageScrollProps> = ({height}) => {
 
   return (
     <div style={{height: `${height}vh`}}>
-      <div className="w-screen h-screen flex flex-col justify-center items-center sticky top-0">
+      <div className="w-screen h-screen flex flex-col justify-center items-center sticky top-0 overflow-scroll">
         <div className="font-titillium text-4xl mb-10">My Journey</div>
         <div className="flex flex-row flex-wrap w-full lg:w-1/2 items-center justify-center">
           {aboutMeContent}

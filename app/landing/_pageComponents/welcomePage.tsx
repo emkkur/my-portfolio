@@ -33,8 +33,8 @@ const WelcomePage: FC<PageProps> = ({height = 100}) => {
   
   return (<div className={`w-screen flex justify-center flex-col`} style={{height: `${height}vh`}}>
     <TypeWriter words={greetings} pace="FAST" fontSize="text-5xl" />
-    <div onClick={scrollToNextPage} className="relative bottom-[-42vh] left-[48.5vw] w-[3vw] h-[3vw] x-0 overflow-hidden rounded-3xl bg-slate-300 animate-bounce hover:animate-none text-black text-xl flex justify-center items-center">
-      <FaChevronDown fontSize={'1.25vw'} />
+    <div onClick={scrollToNextPage} className="relative bottom-[-42vh] left-[48.5vw] md:w-[3vw] md:h-[3vw] w-9 h-9 x-0 overflow-hidden rounded-3xl bg-slate-300 animate-bounce hover:animate-none text-black text-xl flex justify-center items-center">
+      <FaChevronDown fontSize={'1.25vw'} className="md:text=[1.25vw] text-lg" />
     </div>
   </div>
   );
