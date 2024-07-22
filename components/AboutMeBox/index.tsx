@@ -40,9 +40,9 @@ const AboutMeBox: FC<AboutMeBoxProps> = ({title, icon, body, onClick}) => {
         <div className="translate-x-[9%] translate-y-[140%]">
           {icon}
         </div>
-        <div className="w-52 h-52 flex flex-col items-center justify-center p-5" style={{backgroundImage: `url("data:image/svg+xml,${svgString}")`}}>
-          <span className="font-roboto text-sm w-11/12 ml-1">{body}</span>
-          <div className="translate-y-7">{title}</div>
+        <div className="w-48 h-48 md:w-52 md:h-52 flex flex-col items-center justify-center p-5" style={{backgroundImage: `url("data:image/svg+xml,${svgString}")`}}>
+          <span className="font-roboto md:text-sm text-xs w-11/12 ml-1">{body}</span>
+          <div className="translate-y-7 text-lg">{title}</div>
         </div>
       </motion.button>
     </motion.div>
