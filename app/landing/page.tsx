@@ -24,7 +24,7 @@ export default function Landing() {
   return (
     <>
       <F4Respect />
-      <div ref={scrollRef} className={`w-full h-[${totalHeight}vh] relative z-10`}> 
+      <div ref={scrollRef} className={`w-full h-[${totalHeight}vh] relative z-10 no-scrollbar`}> 
         <WelcomePage height={heights[0]} />
         <IntroPage height={heights[1]} progress={page2ScrollProgress} />
         <JourneyPage height={heights[2]} progress={page3ScrollProgress} />
