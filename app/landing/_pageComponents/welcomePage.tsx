@@ -26,7 +26,7 @@ const greetings = [
   "നമസ്കാരം",
 ];
 
-const Page1: FC<PageProps> = ({height = 100}) => {
+const WelcomePage: FC<PageProps> = ({height = 100}) => {
   const scrollToNextPage = () => {
     window.scrollTo({ top: window.innerHeight, behavior: 'smooth' });
   };
@@ -40,4 +40,4 @@ const Page1: FC<PageProps> = ({height = 100}) => {
   );
 };
 
-export default Page1;
+export default WelcomePage;

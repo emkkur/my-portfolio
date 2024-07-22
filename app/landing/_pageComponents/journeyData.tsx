@@ -1,7 +1,7 @@
 import { ReactElement } from "react";
 import { FaBuildingColumns, FaGraduationCap, FaLaptopCode, FaLocationDot, FaSchool } from "react-icons/fa6";
 
-export type Page3ContentType = {
+export type JourneyContentType = {
   title: string;
   body: string;
   icon: ReactElement;
@@ -10,7 +10,7 @@ export type Page3ContentType = {
   bigIcon: ReactElement;
 }
 
-export const Page3Content: Page3ContentType[] = [
+export const JourneyContent: JourneyContentType[] = [
   {
     title: "1997",
     body: "Born and lived most of my life in Kottayam, Kerala",

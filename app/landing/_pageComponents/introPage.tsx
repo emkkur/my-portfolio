@@ -5,7 +5,7 @@ import { ImageGrid } from "@/components";
 import { PageScrollProps } from "./types";
 
 
-const Page2: FC<PageScrollProps>  = ({progress, height}) => {
+const IntroPage: FC<PageScrollProps>  = ({progress, height}) => {
 
   const subHead1Y = useTransform(progress, [0.1, 0.4], [100, 0]);
   const subHead2Y = useTransform(progress, [0.4, 0.5], [100, 0]);
@@ -29,4 +29,4 @@ const Page2: FC<PageScrollProps>  = ({progress, height}) => {
   );
 };
 
-export default Page2;
+export default IntroPage;

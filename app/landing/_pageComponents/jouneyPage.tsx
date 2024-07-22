@@ -5,10 +5,10 @@ import { PageScrollProps } from "./types";
 import { useMemo, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import AboutMeBoxDesc from "@/components/AboutMeDesc";
-import { Page3Content } from "./page3Data";
+import { JourneyContent } from "./journeyData";
 
 
-const Page3: React.FC<PageScrollProps> = ({height}) => {  
+const JourneyPage: React.FC<PageScrollProps> = ({height}) => {  
   const [selectedItem, setSelectedItem] = useState<number|null>(null);
 
   const onItemClick = (index: number) => () => {
@@ -19,7 +19,7 @@ const Page3: React.FC<PageScrollProps> = ({height}) => {
     }
   };
 
-  const aboutMeContent = useMemo(() => Page3Content.map((content, index) => (
+  const aboutMeContent = useMemo(() => JourneyContent.map((content, index) => (
     <AboutMeBox
       key={content.title}
       title={content.title}
@@ -46,9 +46,9 @@ const Page3: React.FC<PageScrollProps> = ({height}) => {
               onClick={() => setSelectedItem(null)}
             >
               <AboutMeBoxDesc
-                body={Page3Content[selectedItem].bigBody}
-                title={Page3Content[selectedItem].bigTitle}
-                icon={Page3Content[selectedItem].bigIcon}
+                body={JourneyContent[selectedItem].bigBody}
+                title={JourneyContent[selectedItem].bigTitle}
+                icon={JourneyContent[selectedItem].bigIcon}
               />
             </motion.div>
           )}
@@ -58,4 +58,4 @@ const Page3: React.FC<PageScrollProps> = ({height}) => {
   );
 };
 
-export default Page3;
+export default JourneyPage;
