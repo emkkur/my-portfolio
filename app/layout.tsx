@@ -4,6 +4,7 @@ import "./globals.css";
 import {Roboto, Titillium_Web} from 'next/font/google';
 import localFont from 'next/font/local';
 import { ParticleBg } from "@/components";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 
 export const metadata: Metadata = {
   title: "Emil Kurian",
@@ -56,6 +57,7 @@ export default function RootLayout({
       <body>
         {children}
         <ParticleBg />
+        <SpeedInsights />
       </body>
     </html>
   );
