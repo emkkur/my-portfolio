@@ -125,7 +125,7 @@ const ImageGrid: React.FC = () => {
   const [ref, bounds] = useMeasure({scroll: false});
 
   return (
-    <div ref={ref} className='h-[70vh] w-[50vw] flex justify-center items-center'>
+    <div ref={ref} className='md:h-3/5 md:w-3/4 h-1/2  w-full flex justify-center items-center'>
       <Canvas>
         <MotionConfig >
           <motion.pointLight position={[-10, -10, 0]} distance={5} color={'#EEEEEE'} intensity={5} />
