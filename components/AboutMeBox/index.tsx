@@ -33,8 +33,8 @@ const AboutMeBox: FC<AboutMeBoxProps> = ({title, icon, body, onClick}) => {
     >
       <motion.button
         className="cursor-pointer"
-        whileTap={{scale: 1.1}}
-        whileHover={{scale: 1.2}}
+        whileTap={{scale: 0.9}}
+        whileHover={{scale: 1.05}}
         transition={{type: 'spring', stiffness: 140}}
       >
         <div className="translate-x-[9%] translate-y-[140%]">
