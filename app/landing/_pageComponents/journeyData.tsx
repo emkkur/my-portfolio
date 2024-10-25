@@ -39,7 +39,7 @@ export const JourneyContent: JourneyContentType[] = [
     title: "2023",
     body: "Keyvalue Software Systems as associate software engineer",
     icon: <FaLaptopCode fill="white" className="md:text-4xl text-2xl" />,
-    bigBody: 'I joined Keyvalue Software Systems as an Associate Software Engineer. I was part of the team that developed the company\'s flagship product, a CRM software for small and medium businesses. I was responsible for developing the front end of the application using React and Redux. I also worked on the backend of the application using Node.js and Express. I was also responsible for writing unit tests for the application using Jest and Enzyme. I was also responsible for writing end-to-end tests for the application using Cypress.',
+    bigBody: 'I joined Keyvalue Software Systems as an Associate Software Engineer in 2020. Although most of my training was for React, I was onboarded onto a React Native Project. Through extensive self-learning and excellent mentoring, I was crafting full features within a month. Within the year, I was one of the go-to experts in the company for React Native-related queries, after Google, of course. I was entrusted with training the next batch of graduates who joined us in 2021 and 2022. But perhaps the favourite non-coding job I was given was being part of the 2023 recruitment process. ',
     bigTitle: 'Worked till 2023',
     bigIcon: <FaLaptopCode fill="white" fontSize={64} />,
   },
