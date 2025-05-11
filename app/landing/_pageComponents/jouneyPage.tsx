@@ -4,7 +4,7 @@ import { AboutMeBox } from "@/components";
 import { useMemo, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import AboutMeBoxDesc from "@/components/AboutMeDesc";
-import { JourneyContent } from "./journeyData";
+import { JourneyContent } from "../_pageData/journeyData";
 import { FaChevronRight } from "react-icons/fa6";
 
 
