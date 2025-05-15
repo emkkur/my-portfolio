@@ -70,7 +70,7 @@ const SkillsPage: FC = () => {
                X
                 </button>
               </div>
-              <p className="text-lg font-titillium w-full min-h-[80%] text-justify overflow-scroll px-[5%] mb-5">{skillDetail.details}</p>
+              <p className="text-lg font-titillium w-full min-h-[80%] px-[5%] mb-5 whitespace-pre-line">{skillDetail.details}</p>
               
             </div>
           </motion.div>
