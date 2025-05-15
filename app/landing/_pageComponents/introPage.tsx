@@ -46,8 +46,8 @@ const IntroPage: FC = () => {
           <p className="font-dotMatrix md:text-3xl text-xl mb-1 font-light">Front-End First Software Engineer</p>
           <p className="font-dotMatrix md:text-xl text-lg font-light mt-2">London, United Kingdom</p>
           <div className="grid grid-flow-row grid-rows-1 grid-cols-3 mt-5 text-xl w-[10vw]">
-            <a href="https://github.com/emkkur"><FaGithub /></a>
-            <a href="https://www.linkedin.com/in/emil-kurian-50713a193/"><FaLinkedinIn /></a>
+            <a href="https://github.com/emkkur" target="_blank"><FaGithub /></a>
+            <a href="https://www.linkedin.com/in/emil-kurian-50713a193/" target="_blank"><FaLinkedinIn /></a>
             <div onMouseEnter={onMouseEnter} onMouseLeave={onMouseLeave} className="flex flex-row hover: cursor-pointer" onClick={onEmailClick}>
               <AnimatePresence mode="wait">
                 {!showEmail ? (
