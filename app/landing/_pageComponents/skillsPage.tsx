@@ -59,8 +59,8 @@ const SkillsPage: FC = () => {
             transition={{duration: 0.2}}
             onClick={closeSkillDetail}
           >
-            <div className="flex flex-col justify-between items-center w-1/2 min-h-[50%] bg-black rounded-xl p-4 border-4 border-white/55">
-              <div className="flex flex-row justify-between items-center w-full h-1/5 mb-2">
+            <div className="flex flex-col items-center w-1/2 min-h-[50%] bg-black rounded-xl p-4 border-4 border-white/55">
+              <div className="flex flex-row justify-between items-center w-full h-1/5 mb-8">
                 <div className="w-[10%]" />
                 <p className="text-2xl font-titillium w-4/5 text-center">{skillDetail.title}</p>
                 <button

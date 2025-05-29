@@ -81,7 +81,8 @@ const KnownTechSection: FC = () => {
       {/* Scrollable content */}
       <div
         ref={contentScrollRef}
-        className="flex h-4/6 overflow-y-scroll overflow-x-scroll scroll-smooth snap-x snap-mandatory space-x-6 scrollbar-hide"
+        className="flex h-4/6 overflow-y-scroll overflow-x-scroll scroll-smooth snap-x snap-mandatory space-x-6 scrollbar-hide "
+        onWheel={(e) => e.currentTarget.scrollLeft += e.deltaY}
       >
         {tabs.map((tab) => (
           <div

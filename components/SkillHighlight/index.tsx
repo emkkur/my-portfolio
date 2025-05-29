@@ -19,7 +19,7 @@ const SkillHighlight: React.FC<SkillSetHighlightsProps> = ({image, title, addIma
     animate(hoverValue, 1, {duration: 0.5});
   };
   return (
-    <motion.div className="flex justify-center items-center w-full h-full border border-green-50 rounded-xl flex-col" onClick={onClick} onHoverStart={onHoverStart} onHoverEnd={onHoverEnd}>
+    <motion.div className="flex justify-center items-center w-full h-full border border-green-50 rounded-xl flex-col cursor-pointer" onClick={onClick} onHoverStart={onHoverStart} onHoverEnd={onHoverEnd}>
       <motion.div style={{background: addImageBg ? 'white' : 'rbg(0,0,0,0)', borderRadius: '50%', scale: hoverValue}}>
         <Image
           className="w-[5vw] h-[5vw]"
