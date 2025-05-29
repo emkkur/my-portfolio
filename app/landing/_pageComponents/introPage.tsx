@@ -14,7 +14,7 @@ const IntroPage: FC = () => {
 
 
   const onMouseEnter = () => {
-    timerRef.current = setTimeout(() => setShowEmail(true), 1000);
+    timerRef.current = setTimeout(() => setShowEmail(true), 500);
   };
 
   const onMouseLeave = () => {

@@ -5,6 +5,7 @@ import AboutMeBox from "./AboutMeBox";
 import AboutMeDesc from "./AboutMeDesc";
 import SkillHighlight from "./SkillHighlight";
 import type { SkillSetHighlightsProps } from "./SkillHighlight";
+import TechStacks from "./TechStacks";
 
 export {
   AboutMeBox,
@@ -13,6 +14,7 @@ export {
   ParticleBg,
   TypeWriter,
   SkillHighlight,
+  TechStacks
 };
 
 export type { SkillSetHighlightsProps };
