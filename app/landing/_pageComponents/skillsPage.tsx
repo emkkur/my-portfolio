@@ -44,8 +44,8 @@ const SkillsPage: FC = () => {
       <div className="grid grid-flow-row grid-rows-7 grid-cols-4 gap-4 w-screen h-screen p-8">
         <div className="flex justify-center w-full h-full font-titillium text-4xl cursor-default col-span-4 row-span-1">Skill Set</div>
         <div className="grid grid-cols-3 grid-rows-5 gap-2 w-full h-full col-span-2 row-span-4 justify-center border-white border rounded-xl p-2">{renderSkillHighlights}</div>
-        <div className="flex w-full h-full col-span-2 row-span-2 justify-center border-white border rounded-xl p-5"><TechStacks /></div>
-        <div className="flex w-full h-full col-span-2 row-span-5 justify-center border-white border rounded-xl">Progression</div>
+        <div className="flex w-full h-full col-span-2 row-span-3 justify-center border-white border rounded-xl p-5"><TechStacks /></div>
+        <div className="flex w-full h-full col-span-2 row-span-4 justify-center border-white border rounded-xl">Progression</div>
         <div className="flex w-full h-full col-span-2 row-span-3 justify-center border-white border rounded-xl">Tools</div>
       </div>
       <AnimatePresence>

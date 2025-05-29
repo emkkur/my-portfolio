@@ -27,7 +27,7 @@ const SkillHighlight: React.FC<SkillSetHighlightsProps> = ({image, title, addIma
           alt="React Logo"
         />
       </motion.div>
-      <p className="font-titillium text-sm mt-2">{title}</p>
+      <p className="font-roboto text-sm mt-2">{title}</p>
     </motion.div>
   );
 };
