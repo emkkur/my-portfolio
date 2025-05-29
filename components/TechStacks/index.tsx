@@ -16,7 +16,7 @@ const techStacks = {
 const tabs = Object.keys(techStacks);
 
 const Chip = ({ label }: { label: string }) => (
-  <span className="bg-gray-200 text-gray-800 text-sm font-medium px-3 py-1 rounded-full shadow-sm text-center flex items-center justify-center max-h-[3vh]">
+  <span className="bg-gray-200 text-gray-800 text-sm font-medium px-3 py-1 rounded-full shadow-sm text-center flex items-center justify-center h-[3vh]">
     {label}
   </span>
 );
@@ -48,7 +48,7 @@ const KnownTechSection: FC = () => {
   return (
     <div className="w-full max-w-2xl">
       {/* Tabs */}
-      <div className="relative flex sm:overflow-x-auto scrollbar-hide">
+      <div className="relative flex sm:overflow-x-auto scrollbar-hide h-2/6">
         {tabs.map((tab, index) => (
           <button
             key={tab}
@@ -73,12 +73,12 @@ const KnownTechSection: FC = () => {
       {/* Scrollable content */}
       <div
         ref={scrollRef}
-        className="flex overflow-x-auto scroll-smooth snap-x snap-mandatory space-x-6 scrollbar-hide"
+        className="flex h-4/6 overflow-y-scroll overflow-x-scroll scroll-smooth snap-x snap-mandatory space-x-6 scrollbar-hide"
       >
         {tabs.map((tab) => (
           <div
             key={tab}
-            className="min-w-full snap-start grid grid-cols-3 grid-rows-4 gap-3 py-2"
+            className="min-w-full snap-start grid grid-cols-3 grid-rows-4 gap-5 py-2"
           >
             {techStacks[tab as keyof typeof techStacks].map((tech) => (
               <Chip key={tech} label={tech} />
