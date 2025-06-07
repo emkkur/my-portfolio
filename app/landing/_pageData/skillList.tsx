@@ -1,7 +1,7 @@
 import { SkillSetHighlightsProps } from "@/components";
 import ReactLogo from "../../../public/logos/React.png";
 import NextLogo from "../../../public/logos/Next.js.png";
-import TailwindLogo from "../../../public/logos/Tailwind CSS.png";
+import TailwindLogo from "../../../public/logos/Tailwind_CSS.png";
 import TypescriptLogo from "../../../public/logos/TypeScript.png";
 import PythonLogo from "../../../public/logos/Python.png";
 import GitLogo from "../../../public/logos/Git.png";

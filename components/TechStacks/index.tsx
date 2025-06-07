@@ -16,7 +16,7 @@ const techStacks = {
 const tabs = Object.keys(techStacks);
 
 const Chip = ({ label }: { label: string }) => (
-  <span className="border-gray-200 border text-white text-sm font-medium px-3 py-1 rounded-full shadow-sm text-center flex items-center justify-center h-[3vh] font-roboto whitespace-nowrap">
+  <span className="border-gray-200 border text-white xl:text-sm sm:text-xs font-medium px-3 py-1 rounded-full shadow-sm text-center flex items-center justify-center h-[3vh] font-roboto whitespace-nowrap">
     {label}
   </span>
 );
@@ -54,7 +54,7 @@ const KnownTechSection: FC = () => {
   }, []);
 
   return (
-    <div className="w-full max-w-2xl">
+    <div className="w-full px-7">
       {/* Tabs */}
       <div ref={tabScrollRef} className="relative flex sm:overflow-x-auto scrollbar-hide h-1/6 mb-3">
         {tabs.map((tab, index) => (
@@ -87,7 +87,7 @@ const KnownTechSection: FC = () => {
         {tabs.map((tab) => (
           <div
             key={tab}
-            className="min-w-full snap-start grid grid-cols-4 sm:grid-cols-3 grid-rows-4 sm:grid-rows-4 gap-1 py-2"
+            className="min-w-full snap-start grid xl:grid-cols-4 sm:grid-cols-3 grid-rows-4 sm:grid-rows-4 gap-1 py-2"
           >
             {techStacks[tab as keyof typeof techStacks].map((tech) => (
               <Chip key={tech} label={tech} />

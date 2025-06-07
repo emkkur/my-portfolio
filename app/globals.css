@@ -40,8 +40,11 @@ body {
       display: none;
   }
   /* Hide scrollbar for IE, Edge and Firefox */
-    .no-scrollbar {
-        -ms-overflow-style: 0;  /* IE and Edge */
-        scrollbar-width: none;  /* Firefox */
-    }
+  .no-scrollbar {
+      -ms-overflow-style: 0;  /* IE and Edge */
+      scrollbar-width: none;  /* Firefox */
+  }
+  .circle-border {
+    border-radius: 50%;
+  }
 }
