@@ -7,6 +7,7 @@ import SkillHighlight from "./SkillHighlight";
 import type { SkillSetHighlightsProps } from "./SkillHighlight";
 import TechStacks from "./TechStacks";
 import Progress from "./Progress";
+import Domains from "./Domains";
 
 export {
   AboutMeBox,
@@ -16,7 +17,8 @@ export {
   TypeWriter,
   SkillHighlight,
   TechStacks,
-  Progress
+  Progress,
+  Domains
 };
 
 export type { SkillSetHighlightsProps };
