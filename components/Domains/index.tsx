@@ -35,7 +35,10 @@ const Domains: FC = () => {
   });
 
   const checkIfScrollable = () => {
-    if (!scrollRef.current) return false;
+    if (!scrollRef.current) {
+      setIsScrollable(false);
+      return;
+    }
     const { scrollWidth, clientWidth } = scrollRef.current;
     setIsScrollable(scrollWidth > clientWidth);
   };
