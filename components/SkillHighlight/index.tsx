@@ -24,7 +24,7 @@ const SkillHighlight: React.FC<SkillSetHighlightsProps> = ({image, title, addIma
         <Image
           className="w-[5vw] h-[5vw]"
           src={image}
-          alt="React Logo"
+          alt={`${title} logo`}
         />
       </motion.div>
       <p className="font-roboto text-sm mt-2">{title}</p>

@@ -18,7 +18,7 @@ const ProgressItem: FC<{skill: SkillPercentage}> = ({ skill }) => {
       <div>
         <svg className="h-20 w-20" viewBox="0 0 42 42" style={{transform: 'rotate(-90deg)'}}>
           <circle cx="21" cy="21" r="16" fill="transparent" stroke="gray" strokeWidth={1} />
-          <circle cx="21" cy="21" r="16" fill="transparent" strokeLinecap="round" strokeDasharray="100px" strokeDashoffset={`${100 - skill.percentage}px`} stroke="white" strokeWidth={2} />
+          <circle cx="21" cy="21" r="16" fill="transparent" strokeLinecap="round" strokeDasharray={100} strokeDashoffset={100 - skill.percentage} stroke="white" strokeWidth={2} />
           <text
             x="21"
             y="21"
