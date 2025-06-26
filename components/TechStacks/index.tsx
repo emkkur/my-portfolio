@@ -5,7 +5,7 @@ import { motion, useMotionValue, useSpring } from "framer-motion";
 const techStacks = {
   "Frontend": ["React", "React Native", "Next.js", "TypeScript", "Tailwind CSS", "Redux", "Framer Motion", "Reanimated", "Recoil", "React Contexts", "Axios"],
   "Backend": ["Node.js", "FastAPI", "Python", "PostgreSQL", "Docker", "Firebase", "Qdrant"],
-  "Dev Tools": ["Git", "VSCode", "Cursor", "Windsurf", "Jira", "Confluence", "Github", "Postman", "CircleCI", "App Distribution"],
+  "Dev Tools": ["Git", "VSCode", "Cursor", "Windsurf", "Jira", "Confluence", "GitHub", "Postman", "CircleCI", "App Distribution"],
   "Cloud Tools": ["Vercel", "AWS EC2", "AWS S3", "GCP Cloud Storage", "GCP Cloud Functions"],
   "UX Tools": ["Figma", "Adobe XD", "Adobe Photoshop"],
   "Project Management Tools": ["Jira", "Confluence", "Notion", "Trello", "Firebase Analytics"],

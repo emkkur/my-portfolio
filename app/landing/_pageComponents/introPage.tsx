@@ -10,7 +10,7 @@ const email = "hire@emilkurian.com";
 const IntroPage: FC = () => {
   const timerRef = useRef<NodeJS.Timeout | null>(null);
   const [showEmail, setShowEmail] = useState(false);
-  const [isCopySuccess, setIsCopySucess] = useState(false);
+  const [isCopySuccess, setIsCopySuccess] = useState(false);
 
   useEffect(() => () => { if (timerRef.current) clearTimeout(timerRef.current); }, []);
 
@@ -26,14 +26,14 @@ const IntroPage: FC = () => {
     }
     setShowEmail(false);
     if (isCopySuccess) {
-      setIsCopySucess(false);
+      setIsCopySuccess(false);
     }
   };
 
   const onEmailClick = async () => {
     if (showEmail) {
       await navigator.clipboard.writeText(email);
-      setIsCopySucess(true);
+      setIsCopySuccess(true);
     } else {
       window.location.href = `mailto:${email}`;
     }
