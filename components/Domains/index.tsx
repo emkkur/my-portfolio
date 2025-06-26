@@ -52,7 +52,7 @@ const Domains: FC = () => {
       <div className="w-full h-full shrink-0 flex flex-col snap-center mr-[3vw]" key={experience.title}>
         <p className="font-titillium text-3xl w-full text-center h-[10%]">{experience.title}</p>
         <div className="overflow-scroll h-[90%] scrollbar-hide">
-          <p className="font-roboto text-base w-full">{experience.body}</p>
+          <p className="font-roboto text-base w-full whitespace-pre-line">{experience.body}</p>
         </div>
       </div>
     ));

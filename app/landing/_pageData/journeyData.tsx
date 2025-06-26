@@ -47,7 +47,7 @@ export const JourneyContent: JourneyContentType[] = [
     title: "2025",
     body: "MSc in Advanced Computer Science at the University of Hertfordshire",
     icon: <FaBuildingColumns fill="white" className="md:text-4xl text-2xl" />,
-    bigBody: "I am pursuing my MSc in Advanced Computer Science from the University of Hertfordshire. I have completed my first semester with a 4.37 GPA as of July 2024. Returning to classrooms after working for three years was an experience I could not compare to anything before. I could apply the concepts taught in class, and being part of a master's program meant a lot to my coursemates were well-versed in these concepts. The course demands you to perform at a master's level, which is a challenge I welcome.",
+    bigBody: "I pursued my MSc in Advanced Computer Science from the University of Hertfordshire. I completed my course with an overall of 73.3%. My research dissertation was on version control for large binary files, which led to a deeper understanding of version control systems and how they can be optimized for specific use cases. The courses I picked allowed me to jump into the theoretical side of algorithms, software development methodologies, artificial intelligence and team management. While the academic side of computer science is fascinating and vast, I can't wait to get back on the software engineering horse.",
     bigTitle: 'Will graduate in 2025',
     bigIcon: <FaBuildingColumns fill="white" fontSize={64} />,
   },

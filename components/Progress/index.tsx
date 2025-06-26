@@ -3,24 +3,28 @@ import { FC, useEffect, useRef, useState } from "react";
 import ProgressItem from "../ProgressItem";
 import { FaChevronLeft, FaChevronRight } from "react-icons/fa6";
 import skillPercentage from "./ProgressData";
-import { motion, AnimatePresence, useScroll, useMotionValueEvent } from "framer-motion";
+import { motion, AnimatePresence, useScroll, useMotionValueEvent, useMotionValue } from "framer-motion";
 
 
 
 
 const Progress: FC = () => {
   const scrollRef = useRef<HTMLDivElement>(null);
-  const [showScrollToEndButton, setShowScrollToEndButton] = useState(true);
   const scrollControl = useScroll({ container: scrollRef });
   const [isScrollable, setIsScrollable] = useState(false);
+  const leftScrollButtonOpacity = useMotionValue(0);
+  const rightScrollButtonOpacity = useMotionValue(1);
 
-  useMotionValueEvent(scrollControl.scrollX, "change", (latest) => {
-    const scrollWidth = scrollRef.current?.scrollWidth ?? 0;
-    const clientWidth = scrollRef.current?.clientWidth ?? 0;
-    if (latest === scrollWidth - clientWidth) {
-      setShowScrollToEndButton(false);
+  useMotionValueEvent(scrollControl.scrollXProgress, "change", (latest) => {
+    if (latest === 0) {
+      leftScrollButtonOpacity.set(0);
+      rightScrollButtonOpacity.set(1);
+    } else if (latest > 0.9) {
+      leftScrollButtonOpacity.set(1);
+      rightScrollButtonOpacity.set(0);
     } else {
-      setShowScrollToEndButton(true);
+      leftScrollButtonOpacity.set(1);
+      rightScrollButtonOpacity.set(1);
     }
   });
 
@@ -33,17 +37,20 @@ const Progress: FC = () => {
   }, []);
 
   const checkIfScrollable = () => {
-    if (!scrollRef.current) return false;
+    if (!scrollRef.current) {
+      setIsScrollable(false);
+      return;
+    }
     const { scrollWidth, clientWidth } = scrollRef.current;
     setIsScrollable(scrollWidth > clientWidth);
   };
 
   const onScrollEndClick = () => {
-    scrollRef.current?.scrollTo({left: scrollRef.current?.scrollWidth, behavior: 'smooth'});
+    scrollRef.current?.scrollBy({left: 144, behavior: 'smooth'});
   };
 
   const onScrollStartClick = () => {
-    scrollRef.current?.scrollTo({left: 0, behavior: 'smooth'});
+    scrollRef.current?.scrollBy({left: -144, behavior: 'smooth'});
   };
 
 
@@ -55,15 +62,26 @@ const Progress: FC = () => {
         ))} 
       </div>
       {isScrollable && <AnimatePresence mode="wait">
-        {showScrollToEndButton ? (
-          <motion.button whileTap={{ scale: 0.9 }} exit={{ scale: 0 }} key="scroll-to-end" onClick={onScrollEndClick} className="absolute bottom-[50%] right-[0.5vw] w-[2vw] h-[2vw] bg-gray-200 rounded-full flex justify-center items-center">
-            <FaChevronRight fill="black" />
-          </motion.button>
-        ) : (
-          <motion.button whileTap={{ scale: 0.9 }} exit={{ scale: 0 }} key="scroll-to-start" onClick={onScrollStartClick} className="absolute bottom-[50%] left-[0.5vw] w-[2vw] h-[2vw] bg-gray-200 rounded-full flex justify-center items-center">
-            <FaChevronLeft fill="black" />
-          </motion.button>
-        )}
+        <motion.button
+          whileTap={{ scale: 0.9 }}
+          exit={{ scale: 0 }}
+          key="scroll-right"
+          onClick={onScrollEndClick}
+          className="absolute bottom-[50%] right-[0.5vw] w-[2vw] h-[2vw] bg-gray-200 rounded-full flex justify-center items-center"
+          style={{opacity: rightScrollButtonOpacity}}
+        >
+          <FaChevronRight fill="black" />
+        </motion.button>
+        <motion.button
+          whileTap={{ scale: 0.9 }}
+          exit={{ scale: 0 }}
+          key="scroll-left"
+          onClick={onScrollStartClick}
+          className="absolute bottom-[50%] left-[0.5vw] w-[2vw] h-[2vw] bg-gray-200 rounded-full flex justify-center items-center"
+          style={{opacity: leftScrollButtonOpacity}}
+        >
+          <FaChevronLeft fill="black" />
+        </motion.button>
       </AnimatePresence>}
     </div>
   );
