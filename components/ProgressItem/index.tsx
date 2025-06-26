@@ -12,7 +12,7 @@ export type SkillPercentage = {
 const ProgressItem: FC<{skill: SkillPercentage}> = ({ skill }) => {
   return (
     <div className="flex w-36 flex-col justify-center items-center text-center font-roboto p-2 snap-center">
-      <div className="w-16 circle-border mb-3" style={{background: skill.whiteBg ? 'white' : 'rbg(0,0,0,0)'}}><Image src={skill.icon} alt={skill.skill} /></div>
+      <div className="w-16 circle-border mb-3" style={{background: skill.whiteBg ? 'white' : 'rgb(0,0,0,0)'}}><Image src={skill.icon} alt={skill.skill} /></div>
       <div className="w-full whitespace-nowrap">{skill.skill}</div>
       <div className="w-full bg-gray-700 rounded-md px-2 text-sm">{skill.proficiency}</div>
       <div>

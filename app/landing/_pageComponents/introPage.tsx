@@ -4,6 +4,8 @@ import { AnimatePresence, motion } from "framer-motion";
 import { ImageGrid } from "@/components";
 import { FaCircleCheck, FaCopy, FaEnvelope, FaGithub, FaLinkedinIn } from "react-icons/fa6";
 
+const email = "hire@emilkurian.com";
+
 
 const IntroPage: FC = () => {
   const timerRef = useRef<NodeJS.Timeout | null>(null);
@@ -29,7 +31,6 @@ const IntroPage: FC = () => {
   };
 
   const onEmailClick = async () => {
-    const email = "emilkurian97@gmail.com";
     if (showEmail) {
       await navigator.clipboard.writeText(email);
       setIsCopySucess(true);
@@ -48,7 +49,7 @@ const IntroPage: FC = () => {
           <div className="grid grid-flow-row grid-rows-1 grid-cols-3 mt-5 text-xl w-[10vw]">
             <a href="https://github.com/emkkur" target="_blank"><FaGithub /></a>
             <a href="https://www.linkedin.com/in/emil-kurian-50713a193/" target="_blank"><FaLinkedinIn /></a>
-            <div onMouseEnter={onMouseEnter} onMouseLeave={onMouseLeave} className="flex flex-row hover: cursor-pointer" onClick={onEmailClick}>
+            <div onMouseEnter={onMouseEnter} onMouseLeave={onMouseLeave} className="flex flex-row hover:cursor-pointer" onClick={onEmailClick}>
               <AnimatePresence mode="wait">
                 {!showEmail ? (
                   <motion.div
@@ -79,7 +80,7 @@ const IntroPage: FC = () => {
                           <FaCopy />
                         </motion.div>)}
                     </AnimatePresence>
-                    <p className="text-base ml-2">emilkurian97@gmail.com</p>
+                    <p className="text-base ml-2">{email}</p>
                   </motion.div>
                 )}
               </AnimatePresence>
