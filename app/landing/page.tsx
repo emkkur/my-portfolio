@@ -13,14 +13,16 @@ export default function Landing() {
   const [isMobile, setIsMobile] = useState(false);
 
   const checkIsMobile = () => {
-    window && window.innerWidth <= 768 ? setIsMobile(true) : setIsMobile(false);
+    if (typeof window !== 'undefined') {
+      window.innerWidth <= 768 ? setIsMobile(true) : setIsMobile(false);
+    }
   };
 
   useEffect(() => {
     checkIsMobile();
   }, []);
 
-  window && window.addEventListener('resize', () => {
+  typeof window !== 'undefined' && window.addEventListener('resize', () => {
     checkIsMobile();
   });
 
