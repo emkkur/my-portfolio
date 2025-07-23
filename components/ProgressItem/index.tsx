@@ -16,7 +16,7 @@ const ProgressItem: FC<{skill: SkillPercentage}> = ({ skill }) => {
       <div className="w-full whitespace-nowrap">{skill.skill}</div>
       <div className="w-full bg-gray-700 rounded-md px-2 text-sm">{skill.proficiency}</div>
       <div>
-        <svg className="h-20 w-20" viewBox="0 0 42 42" style={{transform: 'rotate(-90deg)'}}>
+        <svg className="h-[10vh] w-[10vh]" viewBox="0 0 42 42" style={{transform: 'rotate(-90deg)'}}>
           <circle cx="21" cy="21" r="16" fill="transparent" stroke="gray" strokeWidth={1} />
           <circle cx="21" cy="21" r="16" fill="transparent" strokeLinecap="round" strokeDasharray={100} strokeDashoffset={100 - skill.percentage} stroke="white" strokeWidth={2} />
           <text
