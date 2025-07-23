@@ -22,9 +22,17 @@ export default function Landing() {
     checkIsMobile();
   }, []);
 
-  typeof window !== 'undefined' && window.addEventListener('resize', () => {
-    checkIsMobile();
-  });
+  useEffect(() => {
+    if (typeof window !== 'undefined') {
+      const handleResize = () => {
+        checkIsMobile();
+      };
+      window.addEventListener('resize', handleResize);
+      return () => {
+        window.removeEventListener('resize', handleResize);
+      };
+    }
+  }, []);
 
   return (
     <>
