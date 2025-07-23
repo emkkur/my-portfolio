@@ -52,8 +52,8 @@ const particlesConfig: ISourceOptions = {
         "mode": [],
         "parallax": {
           "enable": true,
-          "force": 1.5,
-          "smooth": 10
+          "force": 6,
+          "smooth": 20
         }
       },
       "resize": {
