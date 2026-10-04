@@ -1,11 +1,10 @@
 import type { Config } from "tailwindcss";
+import tailwindScrollbarHide from "tailwind-scrollbar-hide";
 
 const config: Config = {
   content: [
-    "./pages/**/*.{js,ts,jsx,tsx,mdx}",
-    "./components/**/*.{js,ts,jsx,tsx,mdx}",
-    "./app/**/*.{js,ts,jsx,tsx,mdx}",
-    "./hoc/**/*.{js,ts,jsx,tsx,mdx}"
+    "./index.html",
+    "./src/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
     extend: {
@@ -37,7 +36,7 @@ const config: Config = {
     },
   },
   plugins: [
-    require('tailwind-scrollbar-hide')
+    tailwindScrollbarHide
   ],
 };
 export default config;
